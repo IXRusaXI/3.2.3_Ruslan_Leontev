@@ -68,8 +68,8 @@ function App() {
 
   return (
     <MantineProvider>
-      <Container pb="xl">
-        <Title order={1} ta="center" mt="xl" mb="xl">
+      <Container pt='xl'>
+        <Title order={1} ta="center" mb="xl">
           SpaceX Launches 2020
         </Title>
 

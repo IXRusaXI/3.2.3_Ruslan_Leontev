@@ -1,6 +1,4 @@
 import { Card, Image, Text, Button, Stack } from "@mantine/core";
-import type { Launch } from "../../App";
-
 
 export interface LaunchCardProps {
   missionName: string;

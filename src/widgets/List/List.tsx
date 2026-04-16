@@ -9,7 +9,7 @@ interface ListProps {
 
 export function List({ launches, onSeeMore }: ListProps) {
   return (
-    <SimpleGrid cols={3} spacing="lg">
+    <SimpleGrid cols={3} spacing="lg" mb="xl">
       {launches.map((launch) => (
         <LaunchCard
           key={launch.id}
