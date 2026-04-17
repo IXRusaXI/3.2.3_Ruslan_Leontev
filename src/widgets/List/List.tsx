@@ -1,6 +1,6 @@
 import { SimpleGrid } from "@mantine/core";
 import { LaunchCard } from "../Card/Card";
-import type { Launch } from "../../App";
+import { type Launch } from "./../../app/state.ts";
 
 interface ListProps {
   launches: Launch[];

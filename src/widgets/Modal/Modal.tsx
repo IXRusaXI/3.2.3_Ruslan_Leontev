@@ -1,5 +1,7 @@
-import { Modal, Image, Text, Stack, Group, CloseButton, Center } from "@mantine/core";
-import type { Launch } from "../../App";
+import { Image, Text, Stack, Group, CloseButton, Center } from "@mantine/core";
+import { type Launch } from "./../../app/state.ts";
+import { PortalModal } from "./PortalModal";
+
 
 interface LaunchModalProps {
   opened: boolean;
@@ -11,15 +13,7 @@ export function LaunchModal({ opened, onClose, launch }: LaunchModalProps) {
   if (!launch) return null;
 
   return (
-    <Modal
-      opened={opened}
-      onClose={onClose}
-      withCloseButton={false}
-      lockScroll={false}
-      size='xl'
-      centered
-    >
-      {/* Верхняя строка: название миссии слева, крестик справа */}
+    <PortalModal opened={opened} onClose={onClose}>
       <Group justify="space-between" mb="md">
         <Text fw={600} size="lg">
           {launch.missionName}
@@ -27,7 +21,6 @@ export function LaunchModal({ opened, onClose, launch }: LaunchModalProps) {
         <CloseButton onClick={onClose} />
       </Group>
 
-      {/* Картинка по центру */}
       <Center mb="md">
         <Image
           src={launch.imageUrl}
@@ -39,7 +32,6 @@ export function LaunchModal({ opened, onClose, launch }: LaunchModalProps) {
         />
       </Center>
 
-      {/* Текстовые блоки в колонку */}
       <Stack gap="md">
         {/* Mission name */}
         <Stack gap={2}>
@@ -59,6 +51,6 @@ export function LaunchModal({ opened, onClose, launch }: LaunchModalProps) {
           <Text c="dimmed">{launch.description}</Text>
         </Stack>
       </Stack>
-    </Modal>
+    </PortalModal>
   );
 }
